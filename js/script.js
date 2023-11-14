@@ -31,9 +31,11 @@ createApp ({
 
         created () { 
             console.log(this.slides[0].image);
+
             this.slides.forEach(film => {
                 console.log(film.image);
             });
+            // <img v-for="(movie, index) in slides" :src="movie.image"  class="thumb/>
         },
 
         methods: {

@@ -11,6 +11,10 @@
     align-items: center;
 }
 
+.slider-wrapper {
+    display: flex;
+}
+
 .item {
     float: left;
     width: 700px;
@@ -37,10 +41,13 @@
     height: 300px;
     background: #000;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .thumb {
     height: calc((300px) / 5);
+    object-fit: cover;
     opacity: 0.5;
 }
 
