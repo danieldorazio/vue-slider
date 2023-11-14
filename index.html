@@ -21,21 +21,17 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                        <img :src="slides[0].image" alt="{{ slides[0].title }}" /> <!-- inserire alt? -->
+                        <img :src="slides[activeIndex].image" alt="{{ slides[activeIndex].title }}" /> <!-- inserire alt? -->
                     <div class="text">
-                        <h3>{{ slides[0].title }}</h3>
-                        <p>{{ slides[0].text }}</p>
+                        <h3>{{ slides[activeIndex].title }}</h3>
+                        <p>{{ slides[activeIndex].text }}</p>
                     </div>
                 </div> 
 
                 <div class="thumbs">
                     <div class="prev"></div>
                     <div class="next"></div>
-                    <img class="thumb active" src="img/01.webp" alt="Svezia" />
-                    <img class="thumb" src="img/02.webp" alt="Ratchet & Clank" />
-                    <img class="thumb" src="img/03.webp" alt="Fortnite" />
-                    <img class="thumb"src="img/04.webp" alt="Stray" />
-                    <img class="thumb" src="img/05.webp" alt="Avengers" />
+                    <img v-for="(movie, index) in slides" :src="movie.image" :class= "index === activeIndex ? 'thumb active' : 'thumb' "/>
                 </div> 
 
             </div>
