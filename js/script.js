@@ -35,8 +35,8 @@ createApp ({
         created () { 
             console.log(this.slides.length);
 
-            this.slides.forEach(film=> {
-                console.log(film.image);
+            this.slides.forEach((film, index) => {
+                console.log(film + index);
             });
            
         },
