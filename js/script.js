@@ -33,7 +33,7 @@ createApp ({
         },
 
         created () { 
-            console.log(this.slides[0].image);
+            console.log(this.slides.length);
 
             this.slides.forEach(film=> {
                 console.log(film.image);
@@ -42,7 +42,21 @@ createApp ({
         },
 
         methods: {
-
+            showPrev: function() {
+                if (this.activeIndex === 0) {
+                    this.activeIndex = this.slides.length -1;
+                } else {
+                    this.activeIndex --;
+                }
+            },
+            
+            showNext: function() {
+                if (this.activeIndex ===  this.slides.length -1) {
+                    this.activeIndex = 0;
+                } else {
+                    this.activeIndex ++;
+                }
+            },
         }
 
 
